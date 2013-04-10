@@ -1,0 +1,26 @@
+{
+  "name": "scrollyeah",
+  "title": "Scrollyeah",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.3.0",
+  "homepage": "https://github.com/artpolikarpov/scrollyeah",
+  "author": {
+    "name": "Artem Polikarpov",
+    "email": "artpolikarpov@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/artpolikarpov/scrollyeah.git"
+  },
+  "bugs": "https://github.com/artpolikarpov/scrollyeah/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/artpolikarpov/scrollyeah/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.9.*"
+  },
+  "keywords": []
+}
