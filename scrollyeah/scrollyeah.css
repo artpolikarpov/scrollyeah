@@ -38,26 +38,6 @@
   cursor: grabbing;
 }
 
-.scrollyeah_csstransitions .scrollyeah__shaft, .scrollyeah_csstransitions .scrollyeah__parallax {
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0;
-  -moz-transition-duration: 0;
-  -o-transition-duration: 0;
-  transition-duration: 0;
-  -webkit-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
-  -moz-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
-  -o-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
-  transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
 .scrollyeah__shadow {
   display: block;
   position: absolute;
