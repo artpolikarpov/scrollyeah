@@ -79,5 +79,5 @@ jQuery (1.9+) is required.
 
 
 ## License
-Copyright © 2013 Artem Polikarpov
+Copyright © 2012 Artem Polikarpov
 Licensed under the MIT License.
