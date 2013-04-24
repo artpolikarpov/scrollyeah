@@ -1,0 +1,85 @@
+@import compass
+
+$bezier: cubic-bezier(0.1, 0, 0.25, 1)
+$transitionDuration: 333ms
+
+.scrollyeah
+    position: relative
+    overflow: hidden
+    *zoom: 1
+
+.scrollyeah__wrap
+    overflow: hidden
+    *zoom: 1
+
+.scrollyeah__shaft
+    float: left
+
+.scrollyeah__shaft, .scrollyeah__parallax
+    left: 0
+    position: relative
+
+.scrollyeah_active
+    .scrollyeah__shaft
+        cursor: move
+        cursor: -webkit-grab
+        cursor: -moz-grab
+        cursor: -o-grab
+        cursor: -ms-grab
+        cursor: grab
+        *cursor: move !important
+    .scrollyeah__shaft_grabbing, .scrollyeah__shaft_grabbing *
+        cursor: -webkit-grabbing
+        cursor: -moz-grabbing
+        cursor: -o-grabbing
+        cursor: -ms-grabbing
+        cursor: grabbing
+
+.scrollyeah_csstransitions
+    .scrollyeah__shaft, .scrollyeah__parallax
+        +transition-property(transform)
+        +transition-duration(0)
+        +transition-timing-function($bezier)
+        +transform(translate(0, 0))
+
+$shadowSize: 10px
+
+.scrollyeah__shadow
+    display: block
+    position: absolute
+    text-decoration: none
+    top: 0
+    bottom: 0
+    width: $shadowSize
+    height: auto
+    +transition-property(left, right)
+    +transition-duration($transitionDuration, $transitionDuration)
+    +transition-timing-function($bezier, $bezier)
+    z-index: 10
+    *display: none !important
+    background-repeat: no-repeat
+    background-size: 1px 100%, 5px 100%
+
+.scrollyeah__shadow_prev
+    left: -($shadowSize)
+    +background-image(linear-gradient(transparent, rgba(0, 0, 0, .3) 25%, rgba(0, 0, 0, .3) 75%, transparent), radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, .5), transparent))
+    background-position: 0 0, 0 0
+
+.scrollyeah__shadow_next
+    right: -($shadowSize)
+    +background-image(linear-gradient(transparent, rgba(0, 0, 0, .3) 25%, rgba(0, 0, 0, .3) 75%, transparent), radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, .5), transparent))
+    background-position: 100% 0, 100% 0
+
+.scrollyeah_shadow
+    .scrollyeah__shadow_prev
+        left: 0
+    .scrollyeah__shadow_next
+        right: 0
+
+.scrollyeah_shadow_no-left
+    .scrollyeah__shadow_prev
+        left: -($shadowSize)
+
+.scrollyeah_shadow_no-right
+    .scrollyeah__shadow_next
+        right: -($shadowSize)

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrollyeah</title>
+
+  <script src="../libs/jquery/jquery.js"></script>
+
+  <link rel="stylesheet" href="../scrollyeah/scrollyeah.css"/>
+  <script src="../scrollyeah/scrollyeah.js"></script>
+
+  <style>
+    .item {
+      float: left;
+      width: 128px;
+      height: 128px;
+      line-height: 128px;
+      text-align: center;
+      border: 1px solid #888;
+      margin: 8px;
+    }
+  </style>
+</head>
+<body>
+
+
+<h1>Scrollyeah — <tt>disableIfFit</tt> option</h1>
+
+<h2><tt>disableIfFit:true</tt> (default)</h2>
+
+<pre><code>&lt;div class="scrollyeah" <mark>data-disableIfFit="true"</mark>>
+  &lt;!-- Your floats -->
+&lt;/div></code></pre>
+
+<div class="scrollyeah">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>
+
+<h2><tt>disableIfFit:false</tt></h2>
+
+<p>Content is draggable even when fits.</p>
+
+<pre><code>&lt;div class="scrollyeah" <mark>data-disableIfFit="false"</mark>>
+  &lt;!-- Your floats -->
+&lt;/div></code></pre>
+
+<div class="scrollyeah" data-disableIfFit="false">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>
+
+</body>
+</html>

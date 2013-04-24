@@ -1,0 +1,120 @@
+/*! Scrollyeah - v0.3.0 - 2013-04-24
+* https://github.com/artpolikarpov/scrollyeah
+* Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
+.scrollyeah {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.scrollyeah__wrap {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.scrollyeah__shaft {
+  float: left;
+}
+
+.scrollyeah__shaft, .scrollyeah__parallax {
+  left: 0;
+  position: relative;
+}
+
+.scrollyeah_active .scrollyeah__shaft {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+  *cursor: move !important;
+}
+.scrollyeah_active .scrollyeah__shaft_grabbing, .scrollyeah_active .scrollyeah__shaft_grabbing * {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+}
+
+.scrollyeah_csstransitions .scrollyeah__shaft, .scrollyeah_csstransitions .scrollyeah__parallax {
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  transition-duration: 0;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
+  -moz-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
+  -o-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
+  transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.scrollyeah__shadow {
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  height: auto;
+  -webkit-transition-property: left, right;
+  -moz-transition-property: left, right;
+  -o-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 333ms, 333ms;
+  -moz-transition-duration: 333ms, 333ms;
+  -o-transition-duration: 333ms, 333ms;
+  transition-duration: 333ms, 333ms;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1), cubic-bezier(0.1, 0, 0.25, 1);
+  -moz-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1), cubic-bezier(0.1, 0, 0.25, 1);
+  -o-transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1), cubic-bezier(0.1, 0, 0.25, 1);
+  transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1), cubic-bezier(0.1, 0, 0.25, 1);
+  z-index: 10;
+  *display: none !important;
+  background-repeat: no-repeat;
+  background-size: 1px 100%, 5px 100%;
+}
+
+.scrollyeah__shadow_prev {
+  left: -10px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), color-stop(100%, transparent)), -webkit-gradient(radial, 0 50%, 0, 0 50%, 100, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -webkit-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -moz-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -o-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-position: 0 0, 0 0;
+}
+
+.scrollyeah__shadow_next {
+  right: -10px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), color-stop(100%, transparent)), -webkit-gradient(radial, 100% 50%, 0, 100% 50%, 100, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -webkit-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -moz-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -o-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
+  background-position: 100% 0, 100% 0;
+}
+
+.scrollyeah_shadow .scrollyeah__shadow_prev {
+  left: 0;
+}
+.scrollyeah_shadow .scrollyeah__shadow_next {
+  right: 0;
+}
+
+.scrollyeah_shadow_no-left .scrollyeah__shadow_prev {
+  left: -10px;
+}
+
+.scrollyeah_shadow_no-right .scrollyeah__shadow_next {
+  right: -10px;
+}

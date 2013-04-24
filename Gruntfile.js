@@ -13,29 +13,54 @@ module.exports = function(grunt) {
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     clean: {
-      files: ['scrollyeah']
+      files: ['<%= pkg.name %>']
     },
     concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      scrollyeah: {
+      js: {
         src: ['src/<%= pkg.name %>.js'],
-        dest: 'scrollyeah/<%= pkg.name %>.js'
+        dest: '<%= pkg.name %>/<%= pkg.name %>.js'
       },
+      css: {
+        src: ['<%= pkg.name %>/<%= pkg.name %>.css'],
+        dest: '<%= pkg.name %>/<%= pkg.name %>.css'
+      }
     },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
       scrollyeah: {
-        src: '<%= concat.scrollyeah.dest %>',
-        dest: 'scrollyeah/<%= pkg.name %>.min.js'
+        src: '<%= concat.js.dest %>',
+        dest: '<%= pkg.name %>/<%= pkg.name %>.min.js'
       },
     },
+    compass: {
+      dev: {
+        options: {
+          sassDir: 'src',
+          cssDir: '<%= pkg.name %>',
+          outputStyle: 'expanded',
+          environment: 'production',
+          noLineComments: true,
+          force: true
+        }
+      }
+    },
+    cssmin: {
+      scrollyeah: {
+        src: '<%= concat.css.dest %>',
+        dest: '<%= pkg.name %>/<%= pkg.name %>.min.css'
+      }
+    },
     watch: {
-
+      scrollyeah: {
+        files: 'src/*',
+        tasks: ['compass', 'concat']
+      }
     },
   });
 
@@ -43,9 +68,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'compass', 'concat', 'uglify', 'cssmin']);
 
 };

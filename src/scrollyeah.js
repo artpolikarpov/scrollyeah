@@ -1,47 +1,38 @@
-/*
- * Scrollyeah
+/*! Scrollyeah - v0.3.0 - 2013-04-24
  * https://github.com/artpolikarpov/scrollyeah
- *
- * Copyright (c) 2013 Artem Polikarpov
- * Licensed under the MIT license.
- */
-
-/*!
- * Bez v1.0.10-g5ae0136
- * http://github.com/rdallasgray/bez
- *
- * A plugin to convert CSS3 cubic-bezier co-ordinates to jQuery-compatible easing functions
- *
- * With thanks to Nikolay Nemshilov for clarification on the cubic-bezier maths
- * See http://st-on-it.blogspot.com/2011/05/calculating-cubic-bezier-function.html
- *
- * Copyright 2011 Robert Dallas Gray. All rights reserved.
- * Provided under the FreeBSD license: https://github.com/rdallasgray/bez/blob/master/LICENSE.txt
- */
-jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").replace(".","p");if(typeof jQuery.easing[b]!="function"){var c=function(a,b){var c=[null,null],d=[null,null],e=[null,null],f=function(f,g){return e[g]=3*a[g],d[g]=3*(b[g]-a[g])-e[g],c[g]=1-e[g]-d[g],f*(e[g]+f*(d[g]+f*c[g]))},g=function(a){return e[0]+a*(2*d[0]+3*c[0]*a)},h=function(a){var b=a,c=0,d;while(++c<14){d=f(b,0)-a;if(Math.abs(d)<.001)break;b-=d/g(b)}return b};return function(a){return f(h(a),1)}};jQuery.easing[b]=function(b,d,e,f,g){return f*c([a[0],a[1]],[a[2],a[3]])(d/g)+e}}return b}});
-
-
-/* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)
- * Licensed under the MIT License (LICENSE.txt).
- *
- * Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
- * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
- * Thanks to: Seamus Leahy for adding deltaX and deltaY
- *
- * Version: 3.0.4
- *
- * Requires: 1.2.2+
- */
-(function(c){var a=["DOMMouseScroll","mousewheel"];c.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var d=a.length;d;){this.addEventListener(a[--d],b,false)}}else{this.onmousewheel=b}},teardown:function(){if(this.removeEventListener){for(var d=a.length;d;){this.removeEventListener(a[--d],b,false)}}else{this.onmousewheel=null}}};c.fn.extend({mousewheel:function(d){return d?this.bind("mousewheel",d):this.trigger("mousewheel")},unmousewheel:function(d){return this.unbind("mousewheel",d)}});function b(i){var g=i||window.event,f=[].slice.call(arguments,1),j=0,h=true,e=0,d=0;i=c.event.fix(g);i.type="mousewheel";if(i.wheelDelta){j=i.wheelDelta/120}if(i.detail){j=-i.detail/3}d=j;if(g.axis!==undefined&&g.axis===g.HORIZONTAL_AXIS){d=0;e=-1*j}if(g.wheelDeltaY!==undefined){d=g.wheelDeltaY/120}if(g.wheelDeltaX!==undefined){e=-1*g.wheelDeltaX/120}f.unshift(i,j,e,d);return c.event.handle.apply(this,f)}})(jQuery);
+ * Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
 
 (function($){
-  /* Modernizr 2.0.6 (Custom Build) | MIT & BSD
-   * Build: http://www.modernizr.com/download/#-csstransforms-csstransitions-testprop-testallprops-domprefixes
+  /*!
+   * Bez v1.0.10-g5ae0136
+   * http://github.com/rdallasgray/bez
+   *
+   * A plugin to convert CSS3 cubic-bezier co-ordinates to jQuery-compatible easing functions
+   *
+   * With thanks to Nikolay Nemshilov for clarification on the cubic-bezier maths
+   * See http://st-on-it.blogspot.com/2011/05/calculating-cubic-bezier-function.html
+   *
+   * Copyright 2011 Robert Dallas Gray. All rights reserved.
+   * Provided under the FreeBSD license: https://github.com/rdallasgray/bez/blob/master/LICENSE.txt
    */
-  var Modernizr=function(a,b,c){function z(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+m.join(c+" ")+c).split(" ");return y(d,b)}function y(a,b){for(var d in a)if(j[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function x(a,b){return!!~(""+a).indexOf(b)}function w(a,b){return typeof a===b}function v(a,b){return u(prefixes.join(a+";")+(b||""))}function u(a){j.cssText=a}var d="2.0.6",e={},f=b.documentElement,g=b.head||b.getElementsByTagName("head")[0],h="modernizr",i=b.createElement(h),j=i.style,k,l=Object.prototype.toString,m="Webkit Moz O ms Khtml".split(" "),n={},o={},p={},q=[],r,s={}.hasOwnProperty,t;!w(s,c)&&!w(s.call,c)?t=function(a,b){return s.call(a,b)}:t=function(a,b){return b in a&&w(a.constructor.prototype[b],c)},n.csstransforms=function(){return!!y(["transformProperty","WebkitTransform","MozTransform","OTransform","msTransform"])},n.csstransitions=function(){return z("transitionProperty")};for(var A in n)t(n,A)&&(r=A.toLowerCase(),e[r]=n[A](),q.push((e[r]?"":"no-")+r));u(""),i=k=null,e._version=d,e._domPrefixes=m,e.testProp=function(a){return y([a])},e.testAllProps=z;return e}(this,this.document);
+  $.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").replace(".","p");if(typeof $.easing[b]!="function"){var c=function(a,b){var c=[null,null],d=[null,null],e=[null,null],f=function(f,g){return e[g]=3*a[g],d[g]=3*(b[g]-a[g])-e[g],c[g]=1-e[g]-d[g],f*(e[g]+f*(d[g]+f*c[g]))},g=function(a){return e[0]+a*(2*d[0]+3*c[0]*a)},h=function(a){var b=a,c=0,d;while(++c<14){d=f(b,0)-a;if(Math.abs(d)<.001)break;b-=d/g(b)}return b};return function(a){return f(h(a),1)}};$.easing[b]=function(b,d,e,f,g){return f*c([a[0],a[1]],[a[2],a[3]])(d/g)+e}}return b}});
+
+  /* Copyright (c) 2010 Brandon Aaron (http://brandonaaron.net)
+   * Licensed under the MIT License (LICENSE.txt).
+   *
+   * Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
+   * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
+   * Thanks to: Seamus Leahy for adding deltaX and deltaY
+   *
+   * Version: 3.0.4
+   *
+   * Requires: 1.2.2+
+   */
+  var mousewheel=["DOMMouseScroll","mousewheel"];
+  $.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var d=mousewheel.length;d;){this.addEventListener(mousewheel[--d],b,false)}}else{this.onmousewheel=b}},teardown:function(){if(this.removeEventListener){for(var d=mousewheel.length;d;){this.removeEventListener(mousewheel[--d],b,false)}}else{this.onmousewheel=null}}};$.fn.extend({mousewheel:function(d){return d?this.bind("mousewheel",d):this.trigger("mousewheel")},unmousewheel:function(d){return this.unbind("mousewheel",d)}});function b(i){var g=i||window.event,f=[].slice.call(arguments,1),j=0,h=true,e=0,d=0;i=$.event.fix(g);i.type="mousewheel";if(i.wheelDelta){j=i.wheelDelta/120}if(i.detail){j=-i.detail/3}d=j;if(g.axis!==undefined&&g.axis===g.HORIZONTAL_AXIS){d=0;e=-1*j}if(g.wheelDeltaY!==undefined){d=g.wheelDeltaY/120}if(g.wheelDeltaX!==undefined){e=-1*g.wheelDeltaX/120}f.unshift(i,j,e,d);return $.event.dispatch.apply(this,f)};
+
 
   var touchFLAG = ('ontouchstart' in document);
-  var csstrFLAG = Modernizr.csstransforms && Modernizr.csstransitions/* && !$.browser.mozilla && 1 == 2*/;
   var o__dragTimeout = 300;
   var o__bez = $.bez([.1,0,.25,1]);
   var o__transitionDuration = 333;
@@ -51,8 +42,6 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
 
   var _options = [
     ['maxWidth', 'number', 999999],
-    //['verticalPadding', 'number', 10],
-    //['shadowSize', 'number', 6],
     ['shadows', 'boolean', true],
     ['disableIfFit', 'boolean', true],
     ['centerIfFit', 'boolean', false],
@@ -126,11 +115,7 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
   }
 
   function getTranslate(pos) {
-    if (csstrFLAG) {
-      return getCSS('transform', 'translate(' + pos + 'px,0)');
-    } else {
-      return {left: pos};
-    }
+    return {left: pos};
   }
 
   function getDuration(time) {
@@ -140,7 +125,6 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
   function doScrollyeah(scrollyeah, o) {
     scrollyeah
         .data({ini: true})
-        .addClass(csstrFLAG ? 'scrollyeah_csstransitions' : '')
       //.css({padding: o.verticalPadding + 'px 0'})
         .wrapInner('<div class="scrollyeah__wrap"><div class="scrollyeah__shaft"></div></div>');
 
@@ -191,14 +175,7 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
         });
       }
 
-      if (csstrFLAG) {
-        block.css(getDuration(time));
-        setTimeout(function() {
-          block.css(getTranslate(POS));
-        }, 1);
-      } else {
-        block.stop().animate(getTranslate(POS), time, o__bez);
-      }
+      block.stop().animate(getTranslate(POS), time, o__bez);
 
       if (!extra && o.triggerScrollyeah) {
         clearInterval(animateInterval);
@@ -217,11 +194,7 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
     function setPos(pos, block, extra) {
       clearBackAnimate(block);
 
-      if (csstrFLAG) {
-        block.css(getDuration(0));
-      } else {
-        block.stop();
-      }
+      block.stop();
       if (pos === false) {
         pos = block.position()[_pos];
       }
@@ -542,8 +515,6 @@ jQuery.extend({bez:function(a){var b="bez_"+$.makeArray(arguments).join("_").rep
 
       shaftGrabbingFLAG = false;
       shaft.removeClass('scrollyeah__shaft_grabbing');
-
-
 
       dirtyLeft = -dirtyLeft;
 
