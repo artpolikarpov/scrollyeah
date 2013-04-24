@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrollyeah</title>
+
+  <script src="../libs/jquery/jquery.js"></script>
+
+  <link rel="stylesheet" href="../scrollyeah/scrollyeah.css"/>
+  <script src="../scrollyeah/scrollyeah.js"></script>
+
+  <style>
+    .item {
+      float: left;
+      width: 128px;
+      height: 128px;
+      line-height: 128px;
+      text-align: center;
+      border: 1px solid #888;
+      margin: 8px;
+    }
+  </style>
+</head>
+<body>
+
+
+<h1>Scrollyeah — <tt>centerIfFit</tt> option</h1>
+
+<h2><tt>centerIfFit:false</tt> (default)</h2>
+
+<pre><code>&lt;div class="scrollyeah" <mark>data-centerIfFit="false"</mark>>
+  &lt;!-- Your floats -->
+&lt;/div></code></pre>
+
+<div class="scrollyeah">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>
+
+<h2><tt>centerIfFit:true</tt></h2>
+
+<p>Centers content if width enough.</p>
+
+<pre><code>&lt;div class="scrollyeah" <mark>data-centerIfFit="true"</mark>>
+  &lt;!-- Your floats -->
+&lt;/div></code></pre>
+
+<div class="scrollyeah" data-centerIfFit="true">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>
+
+<p><br></p>
+
+<hr>
+<p>Resize browser to see plugin behavior.</p>
+
+<p><br></p>
+
+</body>
+</html>

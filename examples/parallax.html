@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrollyeah</title>
+
+  <script src="../libs/jquery/jquery.js"></script>
+
+  <link rel="stylesheet" href="../scrollyeah/scrollyeah.css"/>
+  <script src="../scrollyeah/scrollyeah.js"></script>
+
+  <style>
+    .item {
+      float: left;
+      width: 128px;
+      height: 128px;
+      line-height: 128px;
+      text-align: center;
+      border: 1px solid #888;
+      margin: 10px 8px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Scrollyeah with parallax</h1>
+
+<pre>
+&lt;div class="scrollyeah">
+  &lt;div <mark>class="scrollyeah__parallax" data-parallaxRate="-.3"</mark>>
+    &lt;!-- Any content in parallax -->
+  &lt;/div>
+
+  &lt;!-- Your floats -->
+&lt;/div></code></pre>
+
+<br>
+
+<div class="scrollyeah">
+  <div class="scrollyeah__parallax" data-parallaxRate="-.3" style="position: absolute; width: 200%; margin-left: -50%; height: 100%; top: 0; right: 0; bottom: 0; left: 0; background: url(i/noisy_grid.png)"></div>
+
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div>
+  <div class="item">11</div>
+  <div class="item">12</div>
+  <div class="item">13</div>
+  <div class="item">14</div>
+  <div class="item">15</div>
+  <div class="item">16</div>
+</div>
+
+</body>
+</html>
