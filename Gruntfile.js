@@ -13,25 +13,25 @@ module.exports = function(grunt) {
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     clean: {
-      files: ['dist']
+      files: ['scrollyeah']
     },
     concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      dist: {
+      scrollyeah: {
         src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'scrollyeah/<%= pkg.name %>.js'
       },
     },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+      scrollyeah: {
+        src: '<%= concat.scrollyeah.dest %>',
+        dest: 'scrollyeah/<%= pkg.name %>.min.js'
       },
     },
     watch: {
