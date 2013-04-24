@@ -70,7 +70,10 @@ Default options:
 
 ## Examples
 
-(Loading...)
+1. [Default](http://artpolikarpov.github.io/scrollyeah/examples/default.html)
+1. [Disable if fit](http://artpolikarpov.github.io/scrollyeah/examples/disable-if-fit.html)
+1. [Center if fit](http://artpolikarpov.github.io/scrollyeah/examples/center-if-fit.html)
+1. [Parallax](http://artpolikarpov.github.io/scrollyeah/examples/parallax.html)
 
 jQuery (1.9+) is required.
 
