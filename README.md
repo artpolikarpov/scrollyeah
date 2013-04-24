@@ -1,7 +1,7 @@
 Scrollyeah :+1:
 =============
 
-Put your floats in single line.
+Puts floats in single line.
 
 
 ## Getting Started
@@ -66,6 +66,7 @@ Default options:
   centerIfFit: false,
   triggerScrollyeah: false
 }
+```
 
 ## Examples
 
