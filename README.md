@@ -6,10 +6,10 @@ Put your floats in single line.
 
 ## Getting Started
 
-To make Fotorama work on a page:
+To make Scrollyeah work on a page:
 
 1. Link to the newest jQuery, scrollyeah.css & scrollyeah.js.
-1. Add elements to <div class="scrollyeah"></div>.
+1. Add elements to `<div class="scrollyeah"></div>`.
 
 Basic example:
 
@@ -36,26 +36,36 @@ Options are passed through the `data-optionName` attributes:
 </div>
 ```
 
-### `shadows`
+#### `shadows`
 
 Enables shadows.
 
-### `maxWidth`
+#### `maxWidth`
 
 Inner content max-width in pixels. Increase if your content wider than 999999px.
 
-### `disableIfFit`
+#### `disableIfFit`
 
 Disables dragging if no overflow.
 
-### `centerIfFit`
+#### `centerIfFit`
 
 Centers content if width enough.
 
-### `triggerScrollyeah`
+#### `triggerScrollyeah`
 
 Triggers `scrollyeah` event on element.
 
+Default options:
+
+```javascript
+{
+  maxWidth: 999999,
+  shadows: true,
+  disableIfFit: true,
+  centerIfFit: false,
+  triggerScrollyeah: false
+}
 
 ## Examples
 
