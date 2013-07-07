@@ -437,8 +437,8 @@
           checkedDirectionFLAG = false;
 
           if (!touchFLAG) {
-            $document.unbind('mouseup');
-            $document.unbind('mousemove');
+            $document.unbind('mouseup', onMouseUp);
+            $document.unbind('mousemove', onMouseMove);
           } else {
             shaft[0].removeEventListener('touchmove', onMouseMove, false);
             shaft[0].removeEventListener('touchend', onMouseUp, false);
