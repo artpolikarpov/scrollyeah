@@ -1,7 +1,17 @@
 {
   "name": "scrollyeah",
   "title": "Scrollyeah",
-  "description": "The best jQuery plugin ever.",
+  "description": "Puts floats in single line.",
+  "keywords": [
+		"ui",
+		"responsive",
+		"slider",
+		"carousel",
+		"content",
+    "scroll",
+    "layout",
+    "animation"
+	],
   "version": "0.3.1",
   "homepage": "https://github.com/artpolikarpov/scrollyeah",
   "author": {
@@ -21,6 +31,5 @@
   ],
   "dependencies": {
     "jquery": ">=1.8"
-  },
-  "keywords": []
+  }
 }
