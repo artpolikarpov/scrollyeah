@@ -1,4 +1,4 @@
-/*! Scrollyeah - v0.3.0 - 2013-04-25
+/*! Scrollyeah - v0.3.1 - 2013-08-23
 * https://github.com/artpolikarpov/scrollyeah
 * Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
 .scrollyeah {
@@ -66,7 +66,6 @@
 
 .scrollyeah__shadow_prev {
   left: -10px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), color-stop(100%, transparent)), -webkit-gradient(radial, 0 50%, 0, 0 50%, 100, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, transparent));
   background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -webkit-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
   background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -moz-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -o-radial-gradient(0 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
@@ -76,7 +75,6 @@
 
 .scrollyeah__shadow_next {
   right: -10px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(25%, rgba(0, 0, 0, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.3)), color-stop(100%, transparent)), -webkit-gradient(radial, 100% 50%, 0, 100% 50%, 100, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, transparent));
   background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -webkit-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
   background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -moz-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), -o-radial-gradient(100% 50%, farthest-side, rgba(0, 0, 0, 0.5), transparent);
