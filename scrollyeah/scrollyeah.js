@@ -1,10 +1,6 @@
-/*! Scrollyeah - v0.3.0 - 2013-04-25
+/*! Scrollyeah - v0.3.0 - 2013-08-23
 * https://github.com/artpolikarpov/scrollyeah
 * Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
-/*! Scrollyeah - v0.3.0 - 2013-04-24
- * https://github.com/artpolikarpov/scrollyeah
- * Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
-
 (function($){
   /*!
    * Bez v1.0.10-g5ae0136
@@ -326,8 +322,8 @@
             coo = e[_coo];
             e.preventDefault();
             act();
-            $document.mousemove(onMouseMove);
-            $document.mouseup(onMouseUp);
+            $document.bind('mousemove.scrollyeah', onMouseMove);
+            $document.bind('mouseup.scrollyeah', onMouseUp);
           } else if (touchFLAG && e.targetTouches.length == 1) {
             coo = e.targetTouches[0][_coo];
             coo2 = e.targetTouches[0][_coo2];
@@ -440,8 +436,8 @@
           checkedDirectionFLAG = false;
 
           if (!touchFLAG) {
-            $document.unbind('mouseup');
-            $document.unbind('mousemove');
+            $document.unbind('mouseup.scrollyeah', onMouseUp);
+            $document.unbind('mousemove.scrollyeah', onMouseMove);
           } else {
             shaft[0].removeEventListener('touchmove', onMouseMove, false);
             shaft[0].removeEventListener('touchend', onMouseUp, false);

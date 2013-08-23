@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       scrollyeah: {
         src: '<%= concat.js.dest %>',
         dest: '<%= pkg.name %>/<%= pkg.name %>.min.js'
-      },
+      }
     },
     compass: {
       dev: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         files: 'src/*',
         tasks: ['compass', 'concat']
       }
-    },
+    }
   });
 
   // These plugins provide necessary tasks.
