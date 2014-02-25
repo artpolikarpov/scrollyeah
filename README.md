@@ -75,6 +75,11 @@ Default options:
 1. [Center if fit](http://artpolikarpov.github.io/scrollyeah/examples/center-if-fit.html)
 1. [Parallax](http://artpolikarpov.github.io/scrollyeah/examples/parallax.html)
 
+## Live examples
+
+* http://ilyabirman.ru/
+* http://straykov.ru/
+
 jQuery (1.9+) is required.
 
 
