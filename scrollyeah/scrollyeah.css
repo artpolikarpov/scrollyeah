@@ -2,6 +2,12 @@
 * https://github.com/artpolikarpov/scrollyeah
 * Copyright (c) 2013 Artem Polikarpov; Licensed MIT */
 .scrollyeah {
+  cursor: default;
+  -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
   position: relative;
   overflow: hidden;
   *zoom: 1;
