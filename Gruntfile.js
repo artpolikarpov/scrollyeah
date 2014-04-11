@@ -50,6 +50,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    autoprefixer: {
+      main: {
+        options: {
+          browsers: ['last 2 version', 'ie 8', 'ie 7']
+        },
+        src: 'scrollyeah/scrollyeah.css',
+        dest: 'scrollyeah/scrollyeah.css'
+      }
+    },
     cssmin: {
       scrollyeah: {
         src: '<%= concat.css.dest %>',
@@ -59,7 +68,7 @@ module.exports = function(grunt) {
     watch: {
       scrollyeah: {
         files: 'src/*',
-        tasks: ['compass', 'concat']
+        tasks: 'compass autoprefixer concat'.split(' ')
       }
     }
   });
@@ -71,8 +80,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'compass', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', 'clean compass autoprefixer concat uglify cssmin'.split(' '));
 
 };
