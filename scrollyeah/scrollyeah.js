@@ -1,4 +1,4 @@
-/*! Scrollyeah - v0.3.2 - 2014-04-11
+/*! Scrollyeah - v0.3.2 - 2014-11-10
 * https://github.com/artpolikarpov/scrollyeah
 * Copyright (c) 2014 Artem Polikarpov; Licensed MIT */
 (function($){
@@ -174,19 +174,17 @@
         });
       }
 
-      block.stop().animate(getTranslate(POS), time, o__bez);
-
       if (!extra && o.triggerScrollyeah) {
-        clearInterval(animateInterval);
-        animateInterval = setInterval(function(){
-          scrollyeah.trigger('scrollyeah', shaft.position()[_pos]);
-        }, 25);
-        clearTimeout(clearAnimateInterval);
-        clearAnimateInterval = setTimeout(function(){
-          clearInterval(animateInterval);
-        }, time + 100);
+          block.stop().animate(getTranslate(POS), {
+            duration: time,
+              step: function(now, fx) {
+                scrollyeah.trigger('scrollyeah', now);
+              },
+            complete: o__bez
+          });
+      } else {
+        block.stop().animate(getTranslate(POS), time, o__bez);
       }
-
 
     }
 
@@ -574,4 +572,3 @@
 
   }
 })(jQuery);
-
