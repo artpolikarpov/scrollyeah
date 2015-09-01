@@ -3,6 +3,11 @@
 $bezier: cubic-bezier(0.1, 0, 0.25, 1)
 $transitionDuration: 333ms
 
+=background-image($lgradient, $rgradient)
+    -webkit-background-image: $lgradient, $rgradient
+    -moz-background-image:    $lgradient, $rgradient
+    background-image:         $lgradient, $rgradient
+
 .scrollyeah
     position: relative
     overflow: hidden

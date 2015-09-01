@@ -1,6 +1,6 @@
-/*! Scrollyeah - v0.3.2 - 2014-04-11
+/*! Scrollyeah - v0.3.2 - 2015-09-01
 * https://github.com/artpolikarpov/scrollyeah
-* Copyright (c) 2014 Artem Polikarpov; Licensed MIT */
+* Copyright (c) 2015 Artem Polikarpov; Licensed MIT */
 (function($){
   /*!
    * Bez v1.0.10-g5ae0136
