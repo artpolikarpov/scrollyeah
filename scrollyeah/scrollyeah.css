@@ -1,4 +1,4 @@
-/*! Scrollyeah - v0.3.2 - 2015-09-01
+/*! Scrollyeah - v0.3.2 - 2015-09-11
 * https://github.com/artpolikarpov/scrollyeah
 * Copyright (c) 2015 Artem Polikarpov; Licensed MIT */
 .scrollyeah {
@@ -75,10 +75,10 @@
 }
 
 .scrollyeah_shadow .scrollyeah__shadow_prev {
-  left: 0;
+  left: 10px;
 }
 .scrollyeah_shadow .scrollyeah__shadow_next {
-  right: 0;
+  right: 0px;
 }
 
 .scrollyeah_shadow_no-left .scrollyeah__shadow_prev {
