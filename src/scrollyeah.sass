@@ -3,6 +3,11 @@
 $bezier: cubic-bezier(0.1, 0, 0.25, 1)
 $transitionDuration: 333ms
 
+=background-image($lgradient, $rgradient)
+    -webkit-background-image: $lgradient, $rgradient
+    -moz-background-image:    $lgradient, $rgradient
+    background-image:         $lgradient, $rgradient
+
 .scrollyeah
     position: relative
     overflow: hidden
@@ -67,9 +72,9 @@ $shadowSize: 10px
 
 .scrollyeah_shadow
     .scrollyeah__shadow_prev
-        left: 0
+        left: 10px
     .scrollyeah__shadow_next
-        right: 0
+        right: 0px
 
 .scrollyeah_shadow_no-left
     .scrollyeah__shadow_prev
