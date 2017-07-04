@@ -171,19 +171,17 @@
         });
       }
 
-      block.stop().animate(getTranslate(POS), time, o__bez);
-
       if (!extra && o.triggerScrollyeah) {
-        clearInterval(animateInterval);
-        animateInterval = setInterval(function(){
-          scrollyeah.trigger('scrollyeah', shaft.position()[_pos]);
-        }, 25);
-        clearTimeout(clearAnimateInterval);
-        clearAnimateInterval = setTimeout(function(){
-          clearInterval(animateInterval);
-        }, time + 100);
+          block.stop().animate(getTranslate(POS), {
+            duration: time,
+              step: function(now, fx) {
+                scrollyeah.trigger('scrollyeah', now);
+              },
+            complete: o__bez
+          });
+      } else {
+        block.stop().animate(getTranslate(POS), time, o__bez);
       }
-
 
     }
 
@@ -571,4 +569,3 @@
 
   }
 })(jQuery);
-
