@@ -1,3 +1,9 @@
+**Attention! This repository is not currently maintained, and is kept for historical purpose only. Fork your copy away!**
+
+_Thanks everyone for support <3_
+
+:lock::lock::lock:
+
 Scrollyeah :+1:
 =============
 
@@ -75,10 +81,9 @@ Default options:
 1. [Center if fit](http://artpolikarpov.github.io/scrollyeah/examples/center-if-fit.html)
 1. [Parallax](http://artpolikarpov.github.io/scrollyeah/examples/parallax.html)
 
-## Live examples
+## Live example
 
 * http://ilyabirman.ru/
-* http://straykov.ru/
 
 jQuery (1.9+) is required.
 
